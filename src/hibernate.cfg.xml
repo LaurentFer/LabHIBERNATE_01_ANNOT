@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.url">jdbc:oracle:thin:@//localhost:1521/XE</property>
+		<property name="connection.username">LABHIB</property>
+		<property name="connection.password">LABHIB</property>
+		<!-- Pool de connection (interne) -->
+		<property name="connection.pool_size">1</property>
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<!-- Supprimer et re-créer le schéma de base de données au démarrage -->
+		<property name="hbm2ddl.auto">update</property>
+		<!-- Montrer toutes les requêtes générées -->
+		<property name="show_sql">true</property>
+		<!-- Pour utiliser la méthode getCurrentSession -->
+		<property name="hibernate.current_session_context_class">thread</property>
+		<!-- Autoriser la production de statistiques -->
+		<property name="hibernate.generate_statistics">true</property>
+		<mapping class="modele.Formation"/>	
+	</session-factory>
+
+</hibernate-configuration>
